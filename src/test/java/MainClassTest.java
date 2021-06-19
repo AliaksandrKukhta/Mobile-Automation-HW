@@ -3,10 +3,11 @@ import org.junit.Test;
 
 public class MainClassTest {
     MainClass mainClass = new MainClass();
-
+    int expectedResult;
+    boolean equals;
     @Test
     public void testGetLocalNumber(){
-        int expectedResult = 20;
+        expectedResult = 20;
         boolean equalsFourteen;
         if (mainClass.getLocalNumber()==expectedResult){
             equalsFourteen=true;
@@ -17,6 +18,21 @@ public class MainClassTest {
             equalsFourteen=false;
             Assert.assertFalse(equalsFourteen);
             System.out.println("Local number not equals 14");
+        }
+    }
+
+    @Test
+    public void testGetClassNumber(){
+        expectedResult=45;
+        if (mainClass.getClassNumber()>expectedResult){
+            equals=true;
+            Assert.assertTrue(equals);
+            System.out.println("Class number more 45");
+        }
+        else {
+            equals=false;
+            Assert.assertFalse(equals);
+            System.out.println("Class number less 45");
         }
     }
 }
