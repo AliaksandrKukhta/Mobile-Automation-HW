@@ -5,6 +5,7 @@ public class MainClassTest {
     MainClass mainClass = new MainClass();
     int expectedResult;
     boolean equals;
+
     @Test
     public void testGetLocalNumber(){
         expectedResult = 20;
@@ -34,5 +35,16 @@ public class MainClassTest {
             Assert.assertFalse(equals);
             System.out.println("Class number less 45");
         }
+    }
+
+    @Test
+    public void testGetClassString() {
+        int index1 = mainClass.getClassString().indexOf("hello");
+        int index2 = mainClass.getClassString().indexOf("Hello");
+        equals = index1 != -1 || index2 != -1;
+        if (equals) {
+            Assert.assertTrue(equals);
+        }
+        else Assert.fail();
     }
 }
